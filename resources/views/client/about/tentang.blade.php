@@ -120,7 +120,7 @@
         </svg>
       </button>
       <div class="faq-content hidden px-6 py-4 text-gray-600 bg-white leading-relaxed">
-        Kamu cukup mengunjungi situs resmi Sukarobot Academy, klik tombol â€œMasukâ€ di pojok kanan atas, daftar dan masuk dengan email dan password kamu, lalu pilih program belajar yang kamu minati.
+        Kamu cukup mengunjungi situs resmi Sukarobot Academy, klik tombol “Masuk” di pojok kanan atas, daftar dan masuk dengan email dan password kamu, lalu pilih program belajar yang kamu minati.
       </div>
     </div>
 

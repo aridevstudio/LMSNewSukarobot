@@ -23,7 +23,7 @@
                    placeholder="Contoh: https://lh3.googleusercontent.com/a/..." 
                    data-google-url-input
                    class="w-full px-4 py-2.5 text-sm text-gray-900 dark:text-white placeholder-gray-400 bg-white dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-colors">
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5">ðŸ’¡ Paste link gambar Google/eksternal</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5">Tempel tautan gambar Google atau eksternal.</p>
         </div>
 
         
@@ -57,7 +57,7 @@
                     <button type="button" data-cropper-clear-btn
                         class="text-sm text-red-500 hover:text-red-700 font-medium">Hapus Foto</button>
                 </div>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">ðŸ’¡ Scroll untuk zoom, drag untuk geser.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Gunakan scroll untuk memperbesar, lalu seret gambar untuk mengatur posisinya.</p>
             </div>
         </div>
 

@@ -33,12 +33,12 @@
             <div class="space-y-6">
 
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                    <h3 class="text-md font-semibold text-gray-800 dark:text-gray-200 mb-4">ðŸ“ Posisi & Ukuran Font</h3>
+                    <h3 class="text-md font-semibold text-gray-800 dark:text-gray-200 mb-4">Posisi & Ukuran Font</h3>
                     <p class="text-xs text-gray-500 mb-4">Ubah nilai lalu klik "Refresh Preview" untuk melihat hasil</p>
 
                     <div class="space-y-4">
                         <div class="p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200">
-                            <label class="block text-sm font-medium text-yellow-800 mb-2">ðŸŸ¡ Nama (Lobster)</label>
+                            <label class="block text-sm font-medium text-yellow-800 mb-2">Nama (Lobster)</label>
                             <div class="grid grid-cols-3 gap-2">
                                 <div>
                                     <label class="text-xs text-gray-600 dark:text-white">X (%)</label>
@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200">
-                            <label class="block text-sm font-medium text-green-800 mb-2">ðŸŸ¢ Nomor Sertifikat (Lato)</label>
+                            <label class="block text-sm font-medium text-green-800 mb-2">Nomor Sertifikat (Lato)</label>
                             <div class="grid grid-cols-3 gap-2">
                                 <div>
                                     <label class="text-xs text-gray-600 dark:text-white">X (%)</label>
@@ -80,7 +80,7 @@
                         </div>
 
                         <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200">
-                            <label class="block text-sm font-medium text-blue-800 mb-2">ðŸ”µ Deskripsi (Lato)</label>
+                            <label class="block text-sm font-medium text-blue-800 mb-2">Deskripsi (Lato)</label>
                             <div class="grid grid-cols-3 gap-2">
                                 <div>
                                     <label class="text-xs text-gray-600 dark:text-white">X (%)</label>
@@ -101,7 +101,7 @@
                         </div>
 
                         <div class="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200">
-                            <label class="block text-sm font-medium text-purple-800 mb-2">ðŸŸ£ Tanggal (Lato)</label>
+                            <label class="block text-sm font-medium text-purple-800 mb-2">Tanggal (Lato)</label>
                             <div class="grid grid-cols-3 gap-2">
                                 <div>
                                     <label class="text-xs text-gray-600 dark:text-white">X (%)</label>
@@ -158,15 +158,15 @@
             
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 sticky top-6">
                 <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">ðŸ“¸ Hasil Preview</h3>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Hasil Preview</h3>
                     <div class="flex gap-2">
                         <button type="button" id="refreshPreviewBtn" onclick="generatePreview()"
                             class="{{ $template->template_path ? '' : 'hidden' }} inline-flex items-center px-3 py-1.5 text-xs font-medium text-orange-700 bg-orange-100 rounded-lg hover:bg-orange-200 transition-colors cursor-pointer">
-                            ðŸ”„ Refresh Preview
+                            Refresh Preview
                         </button>
                         <a id="downloadPdfBtn" href="#" target="_blank"
                             class="hidden inline-flex items-center px-3 py-1.5 text-xs font-medium text-green-700 bg-green-100 rounded-lg hover:bg-green-200 transition-colors">
-                            ðŸ“„ Download PDF
+                            Download PDF
                         </a>
                     </div>
                 </div>
@@ -192,18 +192,18 @@
                 </div>
 
                 <p class="mt-2 text-xs text-gray-500 text-center">
-                    âœ“ Klik "Refresh Preview" untuk melihat hasil dengan teks
+                    Klik "Refresh Preview" untuk melihat hasil dengan teks
                 </p>
 
                 <div class="mt-8 flex items-center justify-end gap-3">
                     <a href="{{ route('admin.certificates.index') }}"
                         class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
-                        â† Kembali
+                        ← Kembali
                     </a>
 
                     <button type="submit" form="templateForm"
                         class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-orange-600 rounded-lg hover:bg-orange-700 cursor-pointer">
-                        âœ“ Simpan Perubahan
+                        Simpan Perubahan
                     </button>
                 </div>
             </div>

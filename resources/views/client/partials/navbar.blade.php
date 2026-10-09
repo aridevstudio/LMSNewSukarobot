@@ -1,4 +1,13 @@
 ﻿<nav id="main-navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-5">
+    @php
+        $isHomeNavActive = request()->routeIs('client.home');
+        $isProgramNavActive = request()->is('program*');
+        $isInstructorNavActive = request()->is('instruktur*');
+        $isAboutNavActive = $isInstructorNavActive || request()->is('tentang*');
+        $isArticleNavActive = request()->is('artikel*');
+        $isGalleryNavActive = request()->is('galeri*');
+    @endphp
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center">
             
@@ -11,70 +20,42 @@
             
             <div class="nav hidden lg:flex items-center space-x-8">
                 
-                <a href="{{ url('/') }}" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                <a href="{{ url('/') }}" @if($isHomeNavActive) aria-current="page" @endif class="text-sm {{ $isHomeNavActive ? 'font-bold text-black' : 'font-medium text-gray-600 hover:text-black' }} transition-colors">Home</a>
                 
                
 
-                <a href="{{ url('/program') }}" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Program</a>
+                <a href="{{ url('/program') }}" @if($isProgramNavActive) aria-current="page" @endif class="text-sm {{ $isProgramNavActive ? 'font-bold text-black' : 'font-medium text-gray-600 hover:text-black' }} transition-colors">Program</a>
                 
-                  <a href="https://katalog.sukarobot.com/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" target="_blank">Katalog</a>
+                  <a href="https://katalog.sukarobot.com/" class="text-sm font-medium text-gray-600 hover:text-black transition-colors" target="_blank" rel="noopener noreferrer">Katalog</a>
 
                 
                 <div class="relative group">
-                    <button class="flex items-center text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors focus:outline-none cursor-pointer py-1">
+                    <button class="flex items-center text-sm font-medium text-gray-600 hover:text-black transition-colors focus:outline-none cursor-pointer py-1">
                         Kompetisi <span class="ml-1"></span>
                     </button>
                     <div class="absolute left-0 top-full mt-1.5 w-44 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 z-50 before:content-[''] before:absolute before:-top-2 before:left-0 before:w-full before:h-2">
                         
-                        <div class="relative nav-submenu-container group/sub">
-                            <div class="flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors cursor-pointer select-none">
-                                <span>BRC</span>
-                                <svg class="w-3.5 h-3.5 text-gray-400 group-hover/sub:text-blue-600 group-hover/sub:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </div>
-                            
-                            <div class="nav-submenu absolute left-full top-0 ml-1 w-36 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 transform translate-x-1 group-hover/sub:translate-x-0 z-50 before:content-[''] before:absolute before:top-0 before:-left-2 before:w-2 before:h-full">
-                                <a href="#" class="block px-3.5 py-1.5 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg mx-1 transition-colors">2025</a>
-                                <a href="https://brc.sukarobot.com/" target="_blank" rel="noopener noreferrer" class="block px-3.5 py-1.5 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg mx-1 transition-colors">2026</a>
-                                <a href="#" class="block px-3.5 py-1.5 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg mx-1 transition-colors">2027</a>
-                            </div>
-                        </div>
-
-                        
-                        <div class="relative nav-submenu-container group/sub">
-                            <div class="flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors cursor-pointer select-none">
-                                <span>BSE<span class="text-xs">&</span>C</span>
-                                <svg class="w-3.5 h-3.5 text-gray-400 group-hover/sub:text-blue-600 group-hover/sub:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </div>
-                            
-                            <div class="nav-submenu absolute left-full top-0 ml-1 w-36 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 transform translate-x-1 group-hover/sub:translate-x-0 z-50 before:content-[''] before:absolute before:top-0 before:-left-2 before:w-2 before:h-full">
-                                <a href="#" class="block px-3.5 py-1.5 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg mx-1 transition-colors">2025</a>
-                                <a href="#" class="block px-3.5 py-1.5 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg mx-1 transition-colors">2026</a>
-                                <a href="#" class="block px-3.5 py-1.5 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg mx-1 transition-colors">2027</a>
-                            </div>
-                        </div>
+                        <a href="https://brc.sukarobot.com/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black transition-colors">BRC</a>
+                        <a href="{{ url('/') }}#event" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black transition-colors">SRC</a>
                     </div>
                 </div>
 
                 
                 <div class="relative group">
-                    <button class="flex items-center text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors focus:outline-none cursor-pointer py-1">
+                    <button class="flex items-center text-sm {{ $isAboutNavActive ? 'font-bold text-black' : 'font-medium text-gray-600 hover:text-black' }} transition-colors focus:outline-none cursor-pointer py-1">
                         Tentang Sukarobot <span class="ml-1"></span>
                     </button>
                     <div class="absolute left-0 top-full mt-1.5 w-44 bg-white rounded-xl shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 z-50 before:content-[''] before:absolute before:-top-2 before:left-0 before:w-full before:h-2">
-                        <a href="{{ url('/instruktur') }}" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Instruktur</a>
-                        <a href="{{ url('/tentang') }}" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Tentang Kami</a>
+                        <a href="{{ url('/instruktur') }}" @if($isInstructorNavActive) aria-current="page" @endif class="block px-4 py-2 text-sm {{ $isInstructorNavActive ? 'font-bold text-black' : 'font-medium text-gray-700 hover:bg-gray-100 hover:text-black' }} transition-colors">Instruktur</a>
+                        <a href="{{ url('/tentang') }}" @if(request()->is('tentang*')) aria-current="page" @endif class="block px-4 py-2 text-sm {{ request()->is('tentang*') ? 'font-bold text-black' : 'font-medium text-gray-700 hover:bg-gray-100 hover:text-black' }} transition-colors">Tentang Kami</a>
                     </div>
                 </div>
 
                 
-                <a href="{{ url('/artikel') }}" class="text-sm font-medium {{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }} transition-colors">Artikel</a>
+                <a href="{{ url('/artikel') }}" @if($isArticleNavActive) aria-current="page" @endif class="text-sm {{ $isArticleNavActive ? 'font-bold text-black' : 'font-medium text-gray-600 hover:text-black' }} transition-colors">Artikel</a>
 
                 
-                <a href="{{ url('/galeri') }}" class="text-sm font-medium {{ request()->is('galeri*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }} transition-colors">Galeri</a>
+                <a href="{{ url('/galeri') }}" @if($isGalleryNavActive) aria-current="page" @endif class="text-sm {{ $isGalleryNavActive ? 'font-bold text-black' : 'font-medium text-gray-600 hover:text-black' }} transition-colors">Galeri</a>
 
                 
                 @guest
@@ -91,13 +72,13 @@
                         </button>
                         <div class="absolute right-0 top-full mt-1.5 w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 z-50 before:content-[''] before:absolute before:-top-2 before:left-0 before:w-full before:h-2">
                             @if(Auth::user()->role === 'instructor')
-                                <a href="{{ route('client.dashboard') }}" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50">Profil Saya</a>
-                                <a href="{{ route('client.notifications.index') }}" class="flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50"><span>Notifikasi</span>@if($unreadNotificationCount > 0)<span class="rounded-full bg-red-500 px-1.5 py-0.5 text-xs font-bold text-white">{{ $unreadNotificationCount > 99 ? '99+' : $unreadNotificationCount }}</span>@endif</a>
-                                <a href="{{ route('instructor.dashboard') }}?welcome=1" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50">Dashboard Instruktur</a>
+                                <a href="{{ route('client.dashboard') }}" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">Profil Saya</a>
+                                <a href="{{ route('client.notifications.index') }}" class="flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black"><span>Notifikasi</span>@if($unreadNotificationCount > 0)<span class="rounded-full bg-red-500 px-1.5 py-0.5 text-xs font-bold text-white">{{ $unreadNotificationCount > 99 ? '99+' : $unreadNotificationCount }}</span>@endif</a>
+                                <a href="{{ route('instructor.dashboard') }}?welcome=1" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">Dashboard Instruktur</a>
                             @else
-                                <a href="{{ route('client.dashboard') }}" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50">Profil Saya</a>
-                                <a href="{{ route('client.notifications.index') }}" class="flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50"><span>Notifikasi</span>@if($unreadNotificationCount > 0)<span class="rounded-full bg-red-500 px-1.5 py-0.5 text-xs font-bold text-white">{{ $unreadNotificationCount > 99 ? '99+' : $unreadNotificationCount }}</span>@endif</a>
-                                <a href="{{ route('client.become-instructor') }}" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-50">Menjadi Instruktur</a>
+                                <a href="{{ route('client.dashboard') }}" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">Profil Saya</a>
+                                <a href="{{ route('client.notifications.index') }}" class="flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black"><span>Notifikasi</span>@if($unreadNotificationCount > 0)<span class="rounded-full bg-red-500 px-1.5 py-0.5 text-xs font-bold text-white">{{ $unreadNotificationCount > 99 ? '99+' : $unreadNotificationCount }}</span>@endif</a>
+                                <a href="{{ route('client.become-instructor') }}" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">Menjadi Instruktur</a>
                             @endif
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -121,55 +102,35 @@
     
     <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t max-h-[80vh] overflow-y-auto">
         <div class="px-4 py-6 space-y-4 flex flex-col">
-            <a href="{{ url('/') }}" class="text-base font-medium text-gray-700 hover:text-blue-600">Home</a>
+            <a href="{{ url('/') }}" @if($isHomeNavActive) aria-current="page" @endif class="text-base {{ $isHomeNavActive ? 'font-bold text-black' : 'font-medium text-gray-700 hover:text-black' }}">Home</a>
             
-             <a href="https://katalog.sukarobot.com/" class="text-base font-medium text-gray-700 hover:text-blue-600">Katalog</a>
+             <a href="https://katalog.sukarobot.com/" class="text-base font-medium text-gray-700 hover:text-black" target="_blank" rel="noopener noreferrer">Katalog</a>
 
-            <a href="{{ url('/program') }}" class="text-base font-medium text-gray-700 hover:text-blue-600">Program</a>
+            <a href="{{ url('/program') }}" @if($isProgramNavActive) aria-current="page" @endif class="text-base {{ $isProgramNavActive ? 'font-bold text-black' : 'font-medium text-gray-700 hover:text-black' }}">Program</a>
 
             <div>
-                <button class="w-full flex justify-between items-center text-base font-medium text-gray-700 hover:text-blue-600 mobile-dropdown-btn cursor-pointer">
-                    <span>Kompetisi</span> <span class="arrow-icon transition-transform duration-200">â–¾</span>
+                <button class="w-full flex justify-between items-center text-base font-medium text-gray-700 hover:text-black mobile-dropdown-btn cursor-pointer">
+                    <span>Kompetisi</span> <span class="arrow-icon transition-transform duration-200">▾</span>
                 </button>
                 <div class="hidden mt-2 pl-3 space-y-2 mobile-dropdown-content border-l-2 border-gray-100 ml-1">
                     
-                    <div>
-                        <button class="w-full flex justify-between items-center text-sm font-medium text-gray-600 hover:text-blue-600 mobile-dropdown-btn py-1 cursor-pointer">
-                            <span>BRC</span> <span class="arrow-icon transition-transform duration-200 text-xs">â–¾</span>
-                        </button>
-                        <div class="hidden mt-1 pl-3 space-y-1 mobile-dropdown-content border-l border-blue-100 ml-1">
-                            <a href="#" class="block text-xs font-medium text-gray-600 hover:text-blue-600 py-1">2025</a>
-                            <a href="https://brc.sukarobot.com/" target="_blank" rel="noopener noreferrer" class="block text-xs font-medium text-gray-600 hover:text-blue-600 py-1">2026</a>
-                            <a href="#" class="block text-xs font-medium text-gray-600 hover:text-blue-600 py-1">2027</a>
-                        </div>
-                    </div>
-
-                    
-                    <div>
-                        <button class="w-full flex justify-between items-center text-sm font-medium text-gray-600 hover:text-blue-600 mobile-dropdown-btn py-1 cursor-pointer">
-                            <span>BSE<span class="text-xs">&</span>C</span> <span class="arrow-icon transition-transform duration-200 text-xs">â–¾</span>
-                        </button>
-                        <div class="hidden mt-1 pl-3 space-y-1 mobile-dropdown-content border-l border-blue-100 ml-1">
-                            <a href="#" class="block text-xs font-medium text-gray-600 hover:text-blue-600 py-1">2025</a>
-                            <a href="#" class="block text-xs font-medium text-gray-600 hover:text-blue-600 py-1">2026</a>
-                            <a href="#" class="block text-xs font-medium text-gray-600 hover:text-blue-600 py-1">2027</a>
-                        </div>
-                    </div>
+                    <a href="https://brc.sukarobot.com/" target="_blank" rel="noopener noreferrer" class="block text-sm font-medium text-gray-600 hover:text-black py-1">BRC</a>
+                    <a href="{{ url('/') }}#event" class="block text-sm font-medium text-gray-600 hover:text-black py-1">SRC</a>
                 </div>
             </div>
 
             <div>
-                <button class="w-full flex justify-between items-center text-base font-medium text-gray-700 hover:text-blue-600 mobile-dropdown-btn cursor-pointer">
-                    <span>Tentang Sukarobot</span> <span class="arrow-icon transition-transform duration-200">â–¾</span>
+                <button class="w-full flex justify-between items-center text-base {{ $isAboutNavActive ? 'font-bold text-black' : 'font-medium text-gray-700 hover:text-black' }} mobile-dropdown-btn cursor-pointer">
+                    <span>Tentang Sukarobot</span> <span class="arrow-icon transition-transform duration-200">▾</span>
                 </button>
                 <div class="hidden mt-2 pl-3 space-y-2 mobile-dropdown-content border-l-2 border-gray-100 ml-1">
-                    <a href="{{ url('/instruktur') }}" class="block text-sm font-medium text-gray-600 hover:text-blue-600">Instruktur</a>
-                    <a href="{{ url('/tentang') }}" class="block text-sm font-medium text-gray-600 hover:text-blue-600">Tentang Kami</a>
+                    <a href="{{ url('/instruktur') }}" @if($isInstructorNavActive) aria-current="page" @endif class="block text-sm {{ $isInstructorNavActive ? 'font-bold text-black' : 'font-medium text-gray-600 hover:text-black' }}">Instruktur</a>
+                    <a href="{{ url('/tentang') }}" @if(request()->is('tentang*')) aria-current="page" @endif class="block text-sm {{ request()->is('tentang*') ? 'font-bold text-black' : 'font-medium text-gray-600 hover:text-black' }}">Tentang Kami</a>
                 </div>
             </div>
 
-            <a href="{{ url('/artikel') }}" class="text-base font-medium {{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-gray-700 hover:text-blue-600' }}">Artikel</a>
-            <a href="{{ url('/galeri') }}" class="text-base font-medium {{ request()->is('galeri*') ? 'text-blue-600 font-bold' : 'text-gray-700 hover:text-blue-600' }}">Galeri</a>
+            <a href="{{ url('/artikel') }}" @if($isArticleNavActive) aria-current="page" @endif class="text-base {{ $isArticleNavActive ? 'font-bold text-black' : 'font-medium text-gray-700 hover:text-black' }}">Artikel</a>
+            <a href="{{ url('/galeri') }}" @if($isGalleryNavActive) aria-current="page" @endif class="text-base {{ $isGalleryNavActive ? 'font-bold text-black' : 'font-medium text-gray-700 hover:text-black' }}">Galeri</a>
 
             @guest
                 <a href="{{ url('/login') }}" class="w-full bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-center block hover:bg-blue-700 transition-colors">

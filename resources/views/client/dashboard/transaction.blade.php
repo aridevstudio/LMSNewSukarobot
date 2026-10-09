@@ -157,7 +157,7 @@
             const button = this;
             
             button.disabled = true;
-            button.innerHTML = '<span class="animate-spin inline-block mr-1">â³</span> Memproses...';
+            button.innerHTML = '<span class="animate-spin inline-block mr-1" aria-hidden="true">⏳</span> Memproses...';
 
             fetch('/api/payment/resume/' + transactionId, {
               method: 'POST',
@@ -219,7 +219,7 @@
             }).then((result) => {
               if (result.isConfirmed) {
                 button.disabled = true;
-                button.innerHTML = '<span class="animate-spin inline-block">â³</span>';
+                button.innerHTML = '<span class="animate-spin inline-block" aria-hidden="true">⏳</span>';
 
                 fetch('/api/payment/cancel/' + transactionId, {
                   method: 'POST',

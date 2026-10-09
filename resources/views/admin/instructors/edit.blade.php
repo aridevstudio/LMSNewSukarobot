@@ -43,8 +43,8 @@
                             'required' => true,
                             'value' => old('status', $instructor->status ?? 'Aktif'),
                             'options' => [
-                                'Aktif' => 'âœ… Aktif',
-                                'Non-Aktif' => 'âŒ Non-Aktif'
+                                'Aktif' => 'Aktif',
+                                'Non-Aktif' => 'Non-Aktif'
                             ]
                         ])
 
@@ -110,7 +110,7 @@
                             'value' => old('expertise', $instructor->expertise ?? ''),
                             'options' => $expertiseOptions ?? [],
                             'placeholder' => 'Pilih Keahlian',
-                            'addNewText' => 'âž• Tambah Keahlian Baru...',
+                            'addNewText' => '+ Tambah Keahlian Baru...',
                             'customPlaceholder' => 'Masukkan keahlian baru...'
                         ])
 

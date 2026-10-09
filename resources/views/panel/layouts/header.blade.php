@@ -76,9 +76,9 @@
 @endphp
 
 <header id="panel-header"
-    class="z-40 bg-white dark:bg-gray-800 border-b border-slate-100 dark:border-gray-700 transition-colors duration-200">
+    class="relative z-50 h-16 shrink-0 bg-white dark:bg-gray-800 border-b border-slate-100 dark:border-gray-700 transition-colors duration-200">
     
-    <div class="flex items-center justify-between h-16 px-6">
+    <div class="flex h-16 items-center justify-between px-3 sm:px-6">
 
         
         <div class="flex items-center space-x-4">
@@ -89,6 +89,12 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
+
+            <a href="{{ route($role . '.dashboard') }}" class="flex min-w-0 items-center md:hidden" aria-label="Sukarobot Academy">
+                <img src="{{ asset('assets/elearning/client/img/logo_sukarobto_bogor.png') }}"
+                    alt="Sukarobot Academy"
+                    class="h-10 w-auto max-w-[9rem] object-contain" />
+            </a>
 
             @if(!empty($breadcrumb))
                 <div class="hidden md:flex items-center text-base font-semibold text-slate-700 dark:text-gray-200 ml-2">

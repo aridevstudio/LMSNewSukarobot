@@ -1,7 +1,6 @@
 ﻿@extends('client.main')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/elearning/client/css/home.css') }}?v={{ filemtime(public_path('assets/elearning/client/css/home.css')) }}">
-    <link rel="stylesheet" href="{{ asset('assets/elearning/client/css/partials/instructor-cyberpunk.css') }}?v={{ filemtime(public_path('assets/elearning/client/css/partials/instructor-cyberpunk.css')) }}">
 @endsection
  
 @section('body')
@@ -23,7 +22,7 @@
             
             <button id="closePopup"
                 class="absolute top-2 right-2 p-1.5 sm:p-2 rounded-full z-1 text-gray-700 font-bold text-lg leading-none hover:bg-gray-200">
-                âœ•
+                ×
             </button>
 
             
@@ -74,9 +73,8 @@
                 <div
                     class="relative z-10 bg-white p-4 rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
                     <picture>
-                        <source srcset="{{ asset('assets/elearning/client/img/gedung sukarobot bogor.webp') }}" type="image/webp">
-                        <img src="{{ asset('assets/elearning/client/img/gedung sukarobot bogor.jpg') }}"
-                            alt="Gedung Sukarobot Bogor"
+                        <img src="{{ asset('assets/elearning/client/img/gedung-sukarobot-sukabumi.png') }}"
+                            alt="Gedung Sukarobot Cabang Sukabumi"
                             fetchpriority="high"
                             loading="eager"
                             class="w-full rounded-2xl object-cover h-[400px] lg:h-[500px]">
@@ -333,7 +331,7 @@
     </section>
 
     
-    <section id="program" class="pt-6 pb-6 lg:pt-8 lg:pb-8 bg-gradient-to-r from-blue-50/70 via-indigo-50/40 to-amber-50/60 relative overflow-hidden">
+    <section id="program" class="pt-6 pb-8 lg:pt-8 lg:pb-10 bg-gradient-to-r from-blue-50/70 via-indigo-50/40 to-amber-50/60 relative overflow-hidden">
         
         <div class="absolute -top-16 -left-16 w-[450px] h-[350px] bg-blue-200/45 rounded-full blur-3xl pointer-events-none -z-0"></div>
         <div class="absolute -bottom-16 -right-16 w-[450px] h-[350px] bg-orange-200/40 rounded-full blur-3xl pointer-events-none -z-0"></div>
@@ -346,13 +344,13 @@
 
             <div class="relative">
                 @if($popularPrograms->isNotEmpty())
-                    <div class="swiper programSwiper pb-8 px-4">
+                    <div class="swiper programSwiper pb-4 px-4">
                         <div class="swiper-wrapper">
                             @foreach ($popularPrograms as $program)
                                 
                                 <div class="swiper-slide h-auto">
                                     <a href="{{ route('client.program.detail', $program->slug) }}"
-                                        class="block program-card bg-white rounded-2xl shadow-sm transition-all duration-300 border border-gray-100 overflow-hidden group h-full flex flex-col">
+                                        class="block program-card bg-white rounded-2xl shadow-sm transition-all duration-300 border border-gray-100 overflow-hidden group flex flex-col">
                                         <div class="relative overflow-hidden">
                                             @php
                                                 $programImageUrl = ($program->image && str_starts_with($program->image, 'images/'))
@@ -401,7 +399,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="p-5 flex-grow flex flex-col">
+                                        <div class="p-5 flex flex-col">
                                             <div class="flex items-center gap-1 mb-2">
                                                 <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
                                                     <path
@@ -515,12 +513,12 @@
                     </div>
                 @endif
         </div>
+        </div>
     </section>
 
-    
-    <section class="py-5 lg:py-8 bg-gradient-to-b from-white via-slate-50/50 to-white relative">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6">
-            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-[#1D4ED8] via-[#1E40AF] to-[#0F172A] p-6 sm:p-8 lg:p-9 shadow-xl shadow-blue-950/15 border border-blue-400/20 text-center" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+    <section class="relative z-10 isolate py-6 lg:py-8 bg-gradient-to-b from-white via-slate-50/50 to-white">
+        <div class="w-full mx-auto px-4 sm:px-6 lg:px-10">
+            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-[#1D4ED8] via-[#1E40AF] to-[#0F172A] p-6 sm:p-8 lg:p-9 shadow-xl shadow-blue-950/15 border border-blue-400/20 text-center">
                 
                 
                 <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image: radial-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px); background-size: 20px 20px;"></div>
@@ -591,7 +589,7 @@
                 
 
     
-    <section id="event" class="pt-8 pb-14 lg:pt-10 lg:pb-16 bg-white overflow-hidden">
+    <section id="event" class="pt-8 pb-16 lg:pt-10 lg:pb-20 mb-8 lg:mb-10 bg-white overflow-visible">
         <div class="text-center mb-8" data-aos="fade-up">
             <h2 class="text-3xl font-bold text-gray-900">Kompetisi Robotik</h2>
             <p class="text-gray-600 mt-2">Tunjukkan bakatmu dan raih prestasi di tingkat nasional</p>
@@ -603,7 +601,7 @@
                     
                     <div class="swiper-slide">
                         <div
-                            class="bg-white rounded-3xl border border-gray-100 overflow-hidden group h-full flex flex-col lg:flex-row">
+                            class="bg-white rounded-3xl border border-gray-100 overflow-hidden group flex flex-col lg:flex-row">
                             <div class="relative lg:w-1/2 h-64 lg:h-auto overflow-hidden">
                                 <img src="{{ asset('assets/elearning/client/img/logo-brc.png') }}" alt="BRC"
                                     class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
@@ -632,27 +630,28 @@
                     
                     <div class="swiper-slide">
                         <div
-                        class="bg-white rounded-3xl border border-gray-100 overflow-hidden group h-full flex flex-col lg:flex-row">
+                        class="bg-white rounded-3xl border border-gray-100 overflow-hidden group flex flex-col lg:flex-row">
                         <div class="relative lg:w-1/2 h-64 lg:h-auto overflow-hidden">
-                            <img src="{{ asset('assets/elearning/client/img/BSE&C_logo.jpeg') }}" alt="BSE&amp;C"
+                            <img src="{{ asset('assets/elearning/client/img/logo-src.webp') }}" alt="Logo Sukabumi Robotic Competition (SRC)"
                                 class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent lg:bg-gradient-to-r">
                             </div>
                         </div>
                         <div class="p-8 lg:w-1/2 flex flex-col justify-center">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-2">BSE&amp;C (Botani Sukarobot Education &amp; Competition)</h3>
-                            <p class="text-blue-600 font-semibold mb-6">Tingkat Regional</p>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-2">SRC (Sukabumi Robotic Competition)</h3>
+                            <p class="text-blue-600 font-semibold mb-6">🏆 Tingkat Nasional</p>
                             <p class="text-gray-600 mb-8 leading-relaxed text-lg">
-                                BSE&amp;C merupakan event tahunan yang diselenggarakan di Botani Square Mall.
-                                Kompetisi ini menjadi ajang untuk mengembangkan kreativitas, inovasi, dan kemampuan
-                                peserta dalam bidang teknologi dan robotika.
+                                SRC merupakan kompetisi tahunan yang luar biasa. Karena kegiatan ini bukan hanya tentang
+                                teknologi dan robot, tetapi juga tentang kolaborasi, inovasi dan semangat untuk belajar.
+                                Selain itu hadiah menarik dan penghargaan yang menanti untuk para pemenang!
                             </p>
                             <div class="flex items-center">
-                                <span
-                                    class="px-8 py-3 bg-gray-200 text-gray-500 font-bold rounded-xl cursor-not-allowed">
-                                    Segera Hadir
-                                </span>
+                                <a href="https://wa.me/6285795899901?text={{ urlencode('Halo, saya ingin bertanya tentang pendaftaran Sukabumi Robotic Competition (SRC).') }}"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="px-8 py-3 bg-orange-500 text-white font-bold rounded-xl hover:bg-orange-600 transition-colors shadow-lg hover:shadow-orange-500/30">
+                                    Daftar Sekarang
+                                </a>
                             </div>
                         </div>
                         </div>
@@ -678,7 +677,7 @@
 
 
     
-    <section id="instructor" class="pt-6 pb-6 lg:pt-8 lg:pb-8 bg-gradient-to-b from-slate-50 via-sky-50/40 to-slate-50 relative overflow-hidden">
+    <section id="instructor" class="pt-10 pb-6 lg:pt-12 lg:pb-8 bg-gradient-to-b from-slate-50 via-sky-50/40 to-slate-50 relative overflow-hidden">
         
         <div class="absolute top-1/3 -left-20 w-80 h-80 bg-sky-200/25 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-10 -right-20 w-80 h-80 bg-blue-100/30 rounded-full blur-3xl pointer-events-none"></div>
@@ -690,10 +689,10 @@
                     <i class="fa-solid fa-code text-blue-500"></i>
                     <span>Mentor & Tim Ahli</span>
                 </div>
-                <h2 class="cyber-title text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight mb-1">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight mb-1">
                     Instruktur &amp; Pengembang
                 </h2>
-                <p class="cyber-subtitle text-xs sm:text-sm text-gray-600 max-w-xl mx-auto">
+                <p class="text-sm text-gray-600 max-w-xl mx-auto">
                     Belajar langsung dari para pendidik profesional yang berpengalaman.
                 </p>
             </div>
@@ -705,57 +704,20 @@
                         @foreach ($instructors as $instructor)
                             
                             <div class="swiper-slide h-auto">
-                                <div class="cyber-card-wrapper">
-                                    
-                                    <div class="cyber-card-layer-3"></div>
-                                    
-                                    <div class="cyber-card-layer-2"></div>
-                                    
-                                    <div class="cyber-card-front-border">
-                                        <div class="cyber-card-content">
-                                            
-                                            <div class="flex items-center gap-3.5 sm:gap-4">
-                                                
-                                                <div class="cyber-avatar-frame">
-                                                    <div class="cyber-avatar-inner">
-                                                        
-                                                        <svg viewBox="0 0 100 100" class="cyber-wireframe-globe">
-                                                            <circle cx="50" cy="50" r="46" fill="none" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="2 2" />
-                                                            <ellipse cx="50" cy="50" rx="46" ry="16" fill="none" stroke="#0284c7" stroke-width="1" />
-                                                            <ellipse cx="50" cy="50" rx="46" ry="32" fill="none" stroke="#0284c7" stroke-width="1" />
-                                                            <ellipse cx="50" cy="50" rx="16" ry="46" fill="none" stroke="#0284c7" stroke-width="1" />
-                                                            <ellipse cx="50" cy="50" rx="32" ry="46" fill="none" stroke="#0284c7" stroke-width="1" />
-                                                            <line x1="4" y1="50" x2="96" y2="50" stroke="#0284c7" stroke-width="1" />
-                                                            <line x1="50" y1="4" x2="50" y2="96" stroke="#0284c7" stroke-width="1" />
-                                                        </svg>
-                                                        <img src="{{ $instructor->foto }}" alt="{{ $instructor->nama }}" class="relative z-10" />
-                                                    </div>
-                                                </div>
-
-                                                
-                                                <div class="flex-grow min-w-0">
-                                                    <div class="flex items-center justify-between gap-1.5">
-                                                        <h3 class="cyber-name truncate">{{ $instructor->nama }}</h3>
-                                                        <i class="fa-solid fa-robot text-sky-500 text-xs opacity-75 flex-shrink-0"></i>
-                                                    </div>
-                                                    <p class="cyber-role mt-0.5 truncate">{{ $instructor->jabatan }}</p>
-                                                </div>
-                                            </div>
-
-                                            
-                                            <div class="cyber-bio-box">
-                                                <p class="line-clamp-3 text-xs leading-relaxed">{{ $instructor->deskripsi }}</p>
+                                <div class="h-full px-1 py-2">
+                                    <article class="flex h-full min-h-52 flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                                        <div class="flex items-center gap-4">
+                                            <img src="{{ $instructor->foto }}" alt="{{ $instructor->nama }}" class="h-16 w-16 shrink-0 rounded-2xl bg-blue-50 object-cover ring-4 ring-blue-50" />
+                                            <div class="min-w-0">
+                                                <h3 class="truncate text-base font-bold text-gray-900">{{ $instructor->nama }}</h3>
+                                                <p class="mt-1 truncate text-sm font-medium text-blue-600">{{ $instructor->jabatan }}</p>
                                             </div>
                                         </div>
-
-                                        
-                                        <a href="{{ url('/instruktur') }}?highlight={{ urlencode($instructor->nama) }}" class="cyber-card-overlay-link">
-                                            <span>Lihat Selengkapnya</span>
-                                            <span class="overlay-arrow">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </span>
+                                        <p class="mt-4 line-clamp-3 text-sm leading-relaxed text-gray-600">{{ $instructor->deskripsi }}</p>
+                                        <a href="{{ url('/instruktur') }}?highlight={{ urlencode($instructor->nama) }}" class="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold text-blue-600 hover:text-blue-700">
+                                            Lihat profil <i class="fa-solid fa-arrow-right text-xs"></i>
                                         </a>
-                                    </div>
+                                    </article>
                                 </div>
                             </div>
                         @endforeach
@@ -779,14 +741,10 @@
 
             
             <div class="mt-4 sm:mt-5 text-center" data-aos="fade-up">
-                <a href="{{ url('/instruktur') }}" class="cyber-cta-btn group">
-                    <span class="cyber-cta-btn-inner">
-                        <i class="fa-solid fa-users-gear text-sky-500 text-sm"></i>
-                        <span>Lihat Semua Instruktur</span>
-                        <span class="cta-arrow">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-                    </span>
+                <a href="{{ url('/instruktur') }}" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 hover:shadow-md">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <span>Lihat Semua Instruktur</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
                 </a>
             </div>
         </div>
@@ -808,7 +766,7 @@
                     Aktivitas & Keseruan Siswa
                 </h2>
                 <p class="text-gray-600 mt-3 max-w-2xl mx-auto text-base">
-                    Potret suasana belajar interaktif, eksplorasi teknologi robotika, dan momen seru di Sukarobot Cabang Bogor.
+                    Potret suasana belajar interaktif, eksplorasi teknologi robotika, dan momen seru di Sukarobot Cabang Sukabumi.
                 </p>
             </div>
 
@@ -1096,7 +1054,7 @@
                 <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold mb-2.5 shadow-xs">
                     <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
                     <i class="fa-solid fa-location-dot text-xs"></i>
-                    <span>Lokasi Sukarobot Bogor</span>
+                    <span>Lokasi Sukarobot Sukabumi</span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
                     Kunjungi Kantor & Tempat Belajar Kami
@@ -1125,11 +1083,11 @@
                                     </span>
                                 </span>
                                 <span class="text-[11px] font-medium text-gray-400">
-                                    Ciomas, Kab. Bogor
+                                    Cikole, Kota Sukabumi
                                 </span>
                             </div>
                             <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
-                                Sukarobot Academy Cabang Bogor
+                                Sukarobot Academy Cabang Sukabumi
                             </h3>
                             <p class="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed">
                                 Ruang belajar interaktif untuk eksplorasi robotika, pemrograman anak & remaja, IoT, serta mengadakan berbagai perlombaan bergengsi.
@@ -1155,7 +1113,7 @@
                                 </li>
                                 <li class="flex items-center justify-between {{ ($opStatus['isOpenToday'] && now('Asia/Jakarta')->isSaturday()) ? 'bg-emerald-50/70 py-0.5 px-2 rounded-md -mx-1' : '' }}">
                                     <span class="font-medium {{ ($opStatus['isOpenToday'] && now('Asia/Jakarta')->isSaturday()) ? 'text-emerald-800 font-semibold' : 'text-gray-500' }}">Sabtu</span>
-                                    <span class="font-semibold text-gray-800">08:00 - 12:00 WIB</span>
+                                    <span class="font-semibold text-gray-800">08:00 - 14:00 WIB</span>
                                 </li>
                                 <li class="flex items-center justify-between {{ $opStatus['isHoliday'] ? 'bg-rose-50/70 py-0.5 px-2 rounded-md -mx-1' : '' }}">
                                     <span class="font-medium {{ $opStatus['isHoliday'] ? 'text-rose-700 font-semibold' : 'text-gray-500' }}">Minggu / Libur</span>
@@ -1166,13 +1124,13 @@
 
                         
                         <div class="space-y-2 pt-1">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=-6.597364105696696,106.76939929943386"
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-6.922729893076937,106.93068827499648"
                                 target="_blank" rel="noopener noreferrer"
                                 class="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-sm hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5">
                                 <i class="fa-solid fa-diamond-turn-right text-xs sm:text-sm"></i>
                                 <span>Petunjuk Arah (Navigasi GPS)</span>
                             </a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=-6.597364105696696,106.76939929943386"
+                            <a href="https://www.google.com/maps/search/?api=1&query=-6.922729893076937,106.93068827499648"
                                 target="_blank" rel="noopener noreferrer"
                                 class="w-full flex items-center justify-center gap-1.5 py-2 px-4 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl text-xs border border-gray-200 shadow-xs transition-all hover:border-gray-300">
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-blue-600"></i>
@@ -1189,8 +1147,8 @@
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <p class="text-xs font-bold text-gray-900 leading-tight">Sukarobot Cabang Bogor</p>
-                                <p class="text-[10px] text-gray-500">Ciomas Rahayu, Bogor</p>
+                                <p class="text-xs font-bold text-gray-900 leading-tight">Sukarobot Cabang Sukabumi</p>
+                                <p class="text-[10px] text-gray-500">Cikole, Kota Sukabumi</p>
                             </div>
                         </div>
 
@@ -1208,12 +1166,12 @@
                         
                         <iframe
                             id="gmap_canvas"
-                            title="Peta Lokasi Sukarobot Cabang Bogor"
-                            src="https://maps.google.com/maps?q=-6.597364105696696,106.76939929943386&hl=id&z=17&t=m&output=embed"
+                            title="Peta Lokasi Sukarobot Cabang Sukabumi"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.730965411687!2d106.93068827499648!3d-6.922729893076937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68378a889fa131%3A0x255807915403ab50!2sSUKAROBOT%20ACADEMY!5e0!3m2!1sid!2sid!4v1791447270153!5m2!1sid!2sid"
                             class="w-full h-full flex-1 min-h-[320px] sm:min-h-[360px] lg:min-h-[380px] border-0"
                             allowfullscreen=""
                             loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
+                            referrerpolicy="strict-origin-when-cross-origin">
                         </iframe>
 
                         
@@ -1222,7 +1180,7 @@
                                 <i class="fa-solid fa-circle-info text-blue-500 text-xs"></i>
                                 <span>Gunakan dua jari atau kontrol peta untuk navigasi</span>
                             </span>
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=-6.597364105696696,106.76939929943386"
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-6.922729893076937,106.93068827499648"
                                 target="_blank" rel="noopener noreferrer"
                                 class="text-blue-600 hover:text-blue-700 font-bold inline-flex items-center gap-1 text-[11px]">
                                 <span>Rute Langsung</span>
@@ -1273,14 +1231,14 @@
                         return;
                     }
 
-                    const adminPhone = '6285692613411';
-                    const text = `Halo Admin Sukarobot Cabang Bogor, saya ingin bertanya:\n\n*Nama:* ${name}\n*No. HP:* ${phone}\n*Pertanyaan:*\n${message}`;
+                    const adminPhone = '6285795899901';
+                    const text = `Halo Admin Sukarobot Cabang Sukabumi, saya ingin bertanya:\n\n*Nama:* ${name}\n*No. HP:* ${phone}\n*Pertanyaan:*\n${message}`;
                     const waUrl = `https://wa.me/${adminPhone}?text=${encodeURIComponent(text)}`;
 
                     Swal.fire({
                         icon: 'success',
                         title: 'Membuka WhatsApp...',
-                        text: 'Pesan Anda telah disiapkan dan akan dialihkan ke WhatsApp Admin Sukarobot Cabang Bogor.',
+                        text: 'Pesan Anda telah disiapkan dan akan dialihkan ke WhatsApp Admin Sukarobot Cabang Sukabumi.',
                         showConfirmButton: false,
                         timer: 1800
                     });

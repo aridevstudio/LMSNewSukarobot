@@ -123,13 +123,13 @@ class OperationalScheduleService
 
         // Jam operasional
         // Senin - Jumat: 08:00 - 16:00
-        // Sabtu: 08:00 - 12:00
+        // Sabtu: 08:00 - 14:00
         // Minggu / Libur: Tutup
         $isOpenToday = !$isHoliday;
         $isOpenNow = false;
         $currentTime = $date->format('H:i');
 
-        $closeTime = $date->isSaturday() ? '12:00' : '16:00';
+        $closeTime = $date->isSaturday() ? '14:00' : '16:00';
         $openTime = '08:00';
 
         if ($isOpenToday) {

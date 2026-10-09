@@ -35,7 +35,7 @@
 
     
     <div class="bg-white border-t border-gray-200 sticky top-0 z-30 mt-24">
-        <div class="container mx-auto px-6 relative group">
+        <div class="mx-auto w-full max-w-[1600px] px-4 relative group sm:px-6 lg:px-10">
             
             <button id="nav-scroll-left"
                 class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md hover:bg-white text-gray-600 hover:text-blue-600 transition-all hidden border border-gray-100">
@@ -97,7 +97,7 @@
     </section>
 
     
-    <div class="container mx-auto px-6 mb-8 mt-8">
+    <div class="mx-auto mb-8 mt-8 w-full max-w-[1600px] px-4 sm:px-6 lg:px-10">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4 border-b border-gray-100 pb-6">
             
             <div class="text-gray-600 font-medium jumlah-kelas flex items-center gap-2">
@@ -134,14 +134,14 @@
     </div>
 
     
-    <div class="container mx-auto px-6 pb-20">
+    <div class="mx-auto w-full max-w-[1600px] px-4 pb-20 sm:px-6 lg:px-10">
         <div class="kelas-container grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             @forelse ($programs as $program)
                 
                 @php
                     $programImageUrl = ($program->image && str_starts_with($program->image, 'images/'))
                         ? asset($program->image) 
-                        : ($program->image ? asset('storage/' . $program->image) : 'https://picsum.photos/400/250?random=' . $program->id);
+                        : ($program->image ? asset('storage/' . $program->image) : asset('assets/elearning/client/img/logo_sukarobto_bogor.png'));
                     $now = \Carbon\Carbon::now();
                     $startDate = \Carbon\Carbon::parse($program->start_date);
                     $endDate = \Carbon\Carbon::parse($program->end_date);

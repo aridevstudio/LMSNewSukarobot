@@ -112,6 +112,14 @@ body {
   align-items: stretch !important;
 }
 
+.programSwiper .swiper-wrapper {
+  align-items: flex-start !important;
+}
+
+.mySwiper .swiper-wrapper {
+  align-items: flex-start !important;
+}
+
 .programSwiper .swiper-slide,
 .testimonialSwiper .swiper-slide,
 .instructorSwiper .swiper-slide,
@@ -121,9 +129,16 @@ body {
   flex-direction: column !important;
 }
 
+.programSwiper .swiper-slide {
+  align-self: flex-start;
+}
+
+.mySwiper .swiper-slide {
+  align-self: flex-start;
+}
+
 .programSwiper .swiper-slide>div,
-.testimonialSwiper .swiper-slide>div,
-.mySwiper .swiper-slide>div {
+.testimonialSwiper .swiper-slide>div {
   height: 100%;
 }
 

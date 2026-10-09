@@ -9,13 +9,13 @@
 @section('body')
 	<div class="relative bg-slate-50 min-h-screen pb-28 lg:pb-16">
 		
-		<div class="absolute top-0 left-0 w-full h-[650px] lg:h-[550px] bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50 border-b border-gray-100 z-0"></div>
+		<div class="absolute top-0 left-0 w-full h-[650px] lg:h-[550px] bg-gradient-to-br from-blue-50 via-white to-orange-50 border-b border-gray-100 z-0"></div>
 
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-28">
-			<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+		<div class="relative z-10 mx-auto w-full max-w-[1600px] px-4 pt-28 sm:px-6 lg:px-10">
+			<div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(360px,1fr)]">
 				
 				
-				<div class="lg:col-span-8 xl:col-span-8 space-y-8 pt-4 lg:pt-8 relative z-20">
+				<div class="relative z-20 space-y-8 pt-4 lg:pt-8">
 					
 					<div class="mb-12">
 						<h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">{{ $program->program }}</h1>
@@ -32,11 +32,11 @@
 								<div class="flex items-center gap-1">
 									@for($star = 1; $star <= 5; $star++)
 										@if($star <= $filledStars)
-											<span class="text-amber-400">â˜…</span>
+										<span class="text-amber-400">★</span>
 										@elseif($hasHalfStar && $star === $filledStars + 1)
-											<span class="text-amber-300">â˜…</span>
+										<span class="text-amber-300">★</span>
 										@else
-											<span class="text-slate-300">â˜…</span>
+										<span class="text-slate-300">★</span>
 										@endif
 									@endfor
 								</div>
@@ -65,7 +65,7 @@
 									<summary class="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4">
 										<span class="text-xl font-bold text-gray-900">{{ $section['title'] ?? 'Bab Tanpa Judul' }}</span>
 										<span class="text-xl font-bold text-blue-600 group-open:hidden">+</span>
-										<span class="hidden text-xl font-bold text-blue-600 group-open:inline">âˆ’</span>
+										<span class="hidden text-xl font-bold text-blue-600 group-open:inline">−</span>
 									</summary>
 
 									<div class="js-curriculum-content border-t border-slate-200 px-5 py-4 space-y-3">
@@ -122,16 +122,29 @@
 				</div>
 
 				
-				<aside class="lg:col-span-4 xl:col-span-4 lg:mt-8 relative z-20">
-					<div class="kursus-card bg-white rounded-2xl border border-purple-100 shadow-xl p-1 lg:sticky lg:top-28">
+				<aside class="relative z-20 lg:mt-8">
+					<div class="kursus-card self-start rounded-2xl border border-gray-100 bg-white p-1 shadow-lg">
 						<div class="bg-white rounded-xl p-4">
 							@php
-								$detailImageUrl = ($program->image && str_starts_with($program->image, 'images/'))
-									? asset($program->image)
-									: ($program->image ? asset('storage/' . $program->image) : asset('sukarobot.com/source/img/logo_sukarobto_bogor.png'));
+							$detailImagePath = $program->image;
+							$detailImageExists = false;
+
+							if ($detailImagePath && str_starts_with($detailImagePath, 'images/')) {
+								$detailImageExists = file_exists(public_path($detailImagePath));
+								$detailImageUrl = asset($detailImagePath);
+							} elseif ($detailImagePath) {
+								$detailImageExists = \Illuminate\Support\Facades\Storage::disk('public')->exists($detailImagePath);
+								$detailImageUrl = asset('storage/' . $detailImagePath);
+							}
+
+							if (!$detailImageExists) {
+								$detailImageUrl = asset('assets/elearning/client/img/logo_sukarobto_bogor.png');
+							}
 							@endphp
 
-							<img src="{{ $detailImageUrl }}" alt="Poster Kelas" class="w-full rounded-xl object-cover border border-slate-100">
+							<div class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-50">
+								<img src="{{ $detailImageUrl }}" alt="Poster Kelas" class="h-full w-full {{ $detailImageExists ? 'object-cover' : 'object-contain p-8' }} border border-slate-100">
+							</div>
 
 							@if(!$isPurchased)
 								<div class="mt-8 mb-4">

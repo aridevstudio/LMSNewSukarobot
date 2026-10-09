@@ -111,7 +111,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->first();
 
-        // Status jam operasional & hari libur cabang Bogor
+        // Status jam operasional & hari libur cabang Sukabumi
         $operationalStatus = \App\Services\OperationalScheduleService::getStatus();
 
         // Get active galleries for home page: 1 foto terbaru per kategori
@@ -156,8 +156,8 @@ class HomeController extends Controller
             'message' => 'required|string',
         ]);
 
-        $adminPhone = '6285692613411';
-        $text = "Halo Admin Sukarobot Cabang Bogor, saya ingin bertanya:\n\n*Nama:* {$request->name}\n*No. HP:* {$request->phone}\n*Pertanyaan:*\n{$request->message}";
+        $adminPhone = '6285795899901';
+        $text = "Halo Admin Sukarobot Cabang Sukabumi, saya ingin bertanya:\n\n*Nama:* {$request->name}\n*No. HP:* {$request->phone}\n*Pertanyaan:*\n{$request->message}";
 
         return redirect()->away('https://wa.me/' . $adminPhone . '?text=' . urlencode($text));
     }

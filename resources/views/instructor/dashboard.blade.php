@@ -193,7 +193,7 @@
                     Program Saya
                 </h3>
                 <a href="{{ route('instructor.programs.index') }}" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
-                    Lihat Semua â†’
+                    Lihat Semua →
                 </a>
             </div>
 

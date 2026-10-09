@@ -83,7 +83,7 @@
     @stack('styles')
 </head>
 
-<body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100 antialiased">
+<body class="m-0 overflow-hidden bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100 antialiased">
 
     @php
         if (request()->is('admin*')) {
@@ -149,14 +149,14 @@
         })();
     </script>
 
-    <div class="flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-900">
+    <div id="panel-app-shell" class="panel-app-shell fixed inset-0 flex min-h-0 overflow-hidden bg-gray-50 dark:bg-gray-900">
         @include('panel.layouts.sidebar')
         @include('panel.layouts.mobile-sidebar')
 
-        <div class="flex flex-col flex-1 w-full h-full overflow-hidden relative">
+        <div class="relative flex h-full min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
             @include('panel.layouts.header')
 
-            <main class="flex-1 h-full overflow-y-auto overflow-x-hidden">
+            <main class="min-h-0 flex-1 overflow-y-auto overflow-x-hidden">
                 <div class="container mx-auto max-w-7xl">
                     @yield('content')
                 </div>

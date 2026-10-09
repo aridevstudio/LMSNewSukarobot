@@ -140,7 +140,7 @@
                 <div class="mt-4 text-center">
                     <p class="text-sm text-gray-500">
                         Lupa mengambil dokumentasi saat kegiatan? 
-                        <a href="https://wa.me/6285795899901?text=Halo%20Admin,%20saya%20terdaftar%20di%20program%20{{ urlencode($program->program) }}%20namun%20lupa/tidak%20sempat%20mengambil%20dokumentasi%20bukti%20kegiatan.%20Mohon%20bantuannya." 
+                        <a href="https://wa.me/6285795899901?text=Halo%20Admin,%20saya%20terdaftar%20di%20program%20{{ urlencode($program->program) }}%20namun%20lupa/tidak%20sempat%20mengambil%20dokumentasi%20bukti%20kegiatan.%20Mohon%20bantuannya."
                            target="_blank" 
                            class="text-green-600 font-semibold hover:text-green-700 hover:underline transition-colors">
                            Hubungi Admin

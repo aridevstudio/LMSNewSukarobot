@@ -5,7 +5,7 @@
     $customInputId = $inputId . '_custom';
     $selectedValue = $value ?? old($name);
     $isRequired = $required ?? false;
-    $addNewLabel = $addNewText ?? 'âž• Tambah Baru...';
+    $addNewLabel = $addNewText ?? '+ Tambah Baru...';
     $customInputPlaceholder = $customPlaceholder ?? 'Ketik nilai baru';
 
     $isCustomValue = !empty($selectedValue) && !array_key_exists($selectedValue, $options ?? []);

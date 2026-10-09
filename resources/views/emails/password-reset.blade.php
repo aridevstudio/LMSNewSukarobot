@@ -15,7 +15,7 @@
                     <tr>
                         <td style="background: linear-gradient(135deg, #f97316 0%, #3b82f6 100%); padding: 40px 40px; text-align: center;">
                             <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">
-                                ðŸ¤– SukaRobot E-Learning
+                                SukaRobot E-Learning
                             </h1>
                             <p style="margin: 10px 0 0 0; color: rgba(255, 255, 255, 0.9); font-size: 14px;">
                                 Platform Pembelajaran Digital Terbaik
@@ -28,7 +28,7 @@
                         <td style="padding: 40px;">
                             
                             <h2 style="margin: 0 0 20px 0; color: #1f2937; font-size: 22px; font-weight: 600;">
-                                Halo, {{ $userName }}! ðŸ‘‹
+                                Halo, {{ $userName }}!
                             </h2>
                             
                             <p style="margin: 0 0 25px 0; color: #4b5563; font-size: 16px; line-height: 1.6;">
@@ -50,7 +50,7 @@
                             
                             <div style="background-color: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 15px 20px; margin: 25px 0;">
                                 <p style="margin: 0; color: #92400e; font-size: 14px; line-height: 1.5;">
-                                    â° <strong>Penting:</strong> Kode OTP ini hanya berlaku selama <strong>10 menit</strong>. Jangan bagikan kode ini kepada siapapun.
+                                    <strong>Penting:</strong> Kode OTP ini hanya berlaku selama <strong>10 menit</strong>. Jangan bagikan kode ini kepada siapapun.
                                 </p>
                             </div>
                             
@@ -65,7 +65,7 @@
                     <tr>
                         <td style="background-color: #f9fafb; padding: 25px 40px; text-align: center; border-top: 1px solid #e5e7eb;">
                             <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 13px;">
-                                Â© {{ date('Y') }} SukaRobot E-Learning. All rights reserved.
+                                &copy; {{ date('Y') }} SukaRobot E-Learning. All rights reserved.
                             </p>
                             <p style="margin: 0; color: #9ca3af; font-size: 12px;">
                                 Email ini dikirim secara otomatis, mohon tidak membalas email ini.

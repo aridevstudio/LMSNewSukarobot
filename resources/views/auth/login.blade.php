@@ -95,13 +95,14 @@
                             <form method="POST" action="{{ isset($type) && $type === 'admin' ? route('admin.login') : route('instructor.login') }}" class="space-y-6">
                                 @csrf
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    <span>Email</span>
+                                    <span>{{ isset($type) && $type === 'admin' ? 'Email atau Username' : 'Email' }}</span>
                                     <input
-                                        type="email"
+                                        type="{{ isset($type) && $type === 'admin' ? 'text' : 'email' }}"
                                         name="email"
                                         value="{{ old('email') }}"
                                         class="mt-2 block w-full rounded-2xl border border-gray-200 bg-white/80 px-4 py-3 text-sm text-gray-900 shadow-sm ring-1 ring-transparent transition focus:border-orange-400 focus:outline-none focus:ring-orange-200 dark:border-gray-700 dark:bg-gray-800/80 dark:text-gray-100 dark:focus:border-orange-400"
-                                        placeholder="admin@sukarobot.com"
+                                        placeholder="{{ isset($type) && $type === 'admin' ? 'Email atau username admin' : 'nama@email.com' }}"
+                                        autocomplete="{{ isset($type) && $type === 'admin' ? 'username' : 'email' }}"
                                         required
                                         autofocus
                                     />
@@ -114,8 +115,8 @@
                                             :type="showPassword ? 'text' : 'password'"
                                             name="password"
                                             class="block w-full rounded-2xl border border-gray-200 bg-white/80 px-4 py-3 pr-12 text-sm text-gray-900 shadow-sm ring-1 ring-transparent transition focus:border-orange-400 focus:outline-none focus:ring-orange-200 dark:border-gray-700 dark:bg-gray-800/80 dark:text-gray-100 dark:focus:border-orange-400"
-                                            placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                                             required
+                                            placeholder="{{ isset($type) && $type === 'admin' ? 'Password admin' : 'password' }}"
                                         />
                                         <button
                                             type="button"

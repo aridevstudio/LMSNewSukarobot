@@ -295,7 +295,7 @@
                                                         <span class="text-sm
                                                             text-gray-400
                                                             italic">
-                                                            â€”
+                                                            —
                                                         </span>
                                                     @endif
                                                 </td>

@@ -270,11 +270,11 @@
                     <select id="ratingSelector"
                         class="w-full sm:w-auto bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 text-sm rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 px-4 py-2.5 transition-all duration-200">
                         <option value="all">Semua Rating</option>
-                        <option value="5">â­â­â­â­â­ (5)</option>
-                        <option value="4">â­â­â­â­ (4)</option>
-                        <option value="3">â­â­â­ (3)</option>
-                        <option value="2">â­â­ (2)</option>
-                        <option value="1">â­ (1)</option>
+                        <option value="5">★★★★★ (5)</option>
+                        <option value="4">★★★★ (4)</option>
+                        <option value="3">★★★ (3)</option>
+                        <option value="2">★★ (2)</option>
+                        <option value="1">★ (1)</option>
                     </select>
                 </div>
 

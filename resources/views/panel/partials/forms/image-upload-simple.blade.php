@@ -38,11 +38,11 @@
                         <span class="text-orange-600 font-medium">Telusuri</span>
                     </p>
                     <p class="text-xs text-gray-500 dark:text-gray-400">
-                        Format: JPG, JPEG, PNG Â· Maks {{ $maxSizeMB }}MB
+                        Format: JPG, JPEG, PNG · Maks {{ $maxSizeMB }}MB
                     </p>
                     @if($hint)
                         <p class="text-xs text-orange-600 dark:text-orange-400 font-semibold mt-1">
-                            ðŸ“ Rekomendasi: {{ $hint }}
+                            Rekomendasi: {{ $hint }}
                         </p>
                     @endif
                 </div>

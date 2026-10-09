@@ -26,11 +26,11 @@
         <div class="rounded-lg p-4 shadow-sm mb-4 bg-gray-50">
           <p class="text-sm font-semibold text-gray-600 mb-2">Jadwal</p>
           <div class="flex items-center gap-2 text-sm sm:text-base">
-            <span class="text-blue-600 text-lg">ðŸ“…</span>
+            <i class="fa-regular fa-calendar text-blue-600 text-lg" aria-hidden="true"></i>
             <span>{{ date('d M Y', strtotime($program->start_date)) }} - {{ date('d M Y', strtotime($program->end_date)) }}</span>
           </div>
           <div class="flex items-center gap-2 text-sm sm:text-base mt-2">
-            <span class="text-blue-600 text-lg">ðŸ•</span>
+            <i class="fa-regular fa-clock text-blue-600 text-lg" aria-hidden="true"></i>
             <span>{{ date('H:i', strtotime($program->start_time)) }} - {{ date('H:i', strtotime($program->end_time)) }} WIB</span>
           </div>
         </div>
@@ -236,7 +236,7 @@ document.getElementById('pay-button').addEventListener('click', function() {
     const appliedVoucher = button.dataset.voucher;
 
     button.disabled = true;
-    button.innerHTML = '<span class="animate-spin inline-block mr-2">â³</span> Memproses...';
+    button.innerHTML = '<span class="animate-spin inline-block mr-2" aria-hidden="true">⏳</span> Memproses...';
 
     fetch('{{ route("client.payment.create") }}', {
         method: 'POST',

@@ -43,8 +43,8 @@
                             'required' => true,
                             'value' => old('status', $admin->is_active ? 'aktif' : 'non-aktif'),
                             'options' => [
-                                'aktif' => 'âœ… Aktif',
-                                'non-aktif' => 'âŒ Non-Aktif'
+                                'aktif' => 'Aktif',
+                                'non-aktif' => 'Non-Aktif'
                             ]
                         ])
 

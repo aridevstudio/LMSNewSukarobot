@@ -38,8 +38,8 @@
                             'value' => old('status', $article['status']),
                             'placeholder' => 'Pilih Status',
                             'options' => [
-                                'Publish' => 'âœ… Publish',
-                                'Draft' => 'ðŸ“ Draft'
+                                'Publish' => 'Publish',
+                                'Draft' => 'Draft'
                             ]
                         ])
 
@@ -60,7 +60,7 @@
                             'value' => old('category', $article['category']),
                             'options' => $categoryOptions,
                             'placeholder' => 'Pilih Kategori',
-                            'addNewText' => 'âž• Tambah Kategori Baru...',
+                            'addNewText' => '+ Tambah Kategori Baru...',
                             'customPlaceholder' => 'Ketik nama kategori baru'
                         ])
 
@@ -137,7 +137,7 @@
                             'label' => 'Meta Title (Judul Google)',
                             'value' => old('meta_title', $article['meta_title']),
                             'placeholder' => 'Contoh: Kursus Robotika Anak Terbaik di Bogor | Sukarobot',
-                            'help' => 'Disarankan 50â€“60 karakter. Jika dikosongkan, akan otomatis menggunakan judul artikel.'
+                            'help' => 'Disarankan 50–60 karakter. Jika dikosongkan, akan otomatis menggunakan judul artikel.'
                         ])
 
                         
@@ -147,7 +147,7 @@
                             'value' => old('meta_description', $article['meta_description']),
                             'placeholder' => 'Tuliskan 1-2 kalimat menarik yang merangkum isi artikel untuk pembaca di Google...',
                             'rows' => 3,
-                            'help' => 'Disarankan 120â€“160 karakter. Jika dikosongkan, akan otomatis menggunakan excerpt artikel.'
+                            'help' => 'Disarankan 120–160 karakter. Jika dikosongkan, akan otomatis menggunakan excerpt artikel.'
                         ])
 
                         

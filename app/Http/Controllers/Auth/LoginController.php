@@ -43,23 +43,25 @@ class LoginController extends Controller
     public function adminLogin(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|string',
             'password' => 'required|string',
         ], [
-            'email.required' => 'Email wajib diisi',
-            'email.email' => 'Format email tidak valid',
+            'email.required' => 'Email atau username wajib diisi',
             'password.required' => 'Password wajib diisi',
         ]);
 
-        $credentials = $request->only('email', 'password');
+        $identity = trim($request->input('email'));
         $remember = $request->has('remember');
 
-        // First, find the user by email to check role before authentication
-        $user = DB::table('users')->where('email', $credentials['email'])->first();
+        // Admins may identify themselves by email or username.
+        $user = DB::table('users')
+            ->where('email', $identity)
+            ->orWhere('username', $identity)
+            ->first();
         
         if (!$user) {
             return back()->withErrors([
-                'email' => 'Email tidak ditemukan dalam sistem.'
+                'email' => 'Email atau username tidak ditemukan dalam sistem.'
             ])->withInput($request->only('email'));
         }
 
@@ -78,6 +80,11 @@ class LoginController extends Controller
         }
 
         // Try to authenticate using admin guard
+        $credentials = [
+            'email' => $user->email,
+            'password' => $request->input('password'),
+        ];
+
         if (Auth::guard('admin')->attempt($credentials, $remember)) {
             $authenticatedUser = Auth::guard('admin')->user();
             

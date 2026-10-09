@@ -10,21 +10,14 @@
 
 
 <div id="mobile-sidebar-overlay"
-    class="hidden fixed inset-0 z-30 bg-black bg-opacity-50 transition-opacity duration-150"></div>
+    class="hidden absolute inset-x-0 top-16 bottom-0 z-30 bg-black bg-opacity-50 transition-opacity duration-150 md:hidden"></div>
 
 
 <aside id="mobile-sidebar"
-    class="fixed inset-y-0 z-40 flex-shrink-0 w-64 mt-16 bg-white dark:bg-gray-800 md:hidden transition-transform duration-300 ease-in-out flex flex-col -translate-x-full">
+    class="absolute left-0 top-16 bottom-0 z-40 flex w-64 max-w-[min(18rem,calc(100vw-2rem))] shrink-0 -translate-x-full flex-col bg-white transition-transform duration-300 ease-in-out dark:bg-gray-800 md:hidden">
 
-    
-    <div class="flex-1 overflow-y-auto py-4 text-gray-500 dark:text-gray-400">
-        <div class="ml-16">
-            <img src="{{ asset('assets/elearning/client/img/logo_sukarobto_bogor.png') }}"
-                class="w-auto h-10 md:h-10 object-contain transition-all duration-300 ease-in-out hover:scale-105"
-                alt="Sukarobot Logo" />
-        </div>
-
-        <div class="mt-6 px-4">
+    <div class="min-h-0 flex-1 overflow-y-auto py-4 text-gray-500 dark:text-gray-400">
+        <div class="px-4">
             @include('panel.layouts.menu-items')
         </div>
     </div>

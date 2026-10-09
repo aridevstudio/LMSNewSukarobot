@@ -26,7 +26,7 @@
         
         <div class="mb-6">
             <span class="px-3 py-1.5 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                âœ“ Disetujui
+                ✓ Disetujui
             </span>
         </div>
 

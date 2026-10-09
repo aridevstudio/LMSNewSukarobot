@@ -29,8 +29,8 @@
                             'required' => true,
                             'value' => old('status', 'Aktif'),
                             'options' => [
-                                'Aktif' => 'âœ… Aktif',
-                                'Non-Aktif' => 'âŒ Non-Aktif'
+                                'Aktif' => 'Aktif',
+                                'Non-Aktif' => 'Non-Aktif'
                             ]
                         ])
 

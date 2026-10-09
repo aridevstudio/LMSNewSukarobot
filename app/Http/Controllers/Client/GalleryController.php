@@ -16,7 +16,7 @@ class GalleryController extends Controller
     public function index(Request $request)
     {
         SEOTools::setTitle('Galeri & Dokumentasi Kegiatan');
-        SEOTools::setDescription('Dokumentasi lengkap aktivitas belajar, workshop coding & robotika, kompetisi, dan fasilitas Sukarobot Cabang Bogor.');
+        SEOTools::setDescription('Dokumentasi lengkap aktivitas belajar, workshop coding & robotika, kompetisi, dan fasilitas Sukarobot Cabang Sukabumi.');
         SEOTools::opengraph()->setUrl(url()->current());
         SEOTools::setCanonical(url()->current());
         SEOTools::opengraph()->addProperty('type', 'website');

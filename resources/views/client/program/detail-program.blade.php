@@ -6,10 +6,10 @@
 
 @section('body')
 
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
+  <div class="mx-auto mt-20 grid w-full max-w-[1600px] grid-cols-1 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(420px,1fr)] lg:px-10">
 
     
-    <div class="lg:col-span-2 space-y-8">
+    <div class="space-y-8">
       @include('client.program.partials.location-and-type', [
         'program' => $program,
         'isPurchased' => $isPurchased,
@@ -105,17 +105,28 @@
     </div>
 
     
-    <div class="lg:col-span-1 space-y-8">
-      <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 sticky top-28">
+    <div class="space-y-8">
+      <div class="self-start rounded-2xl border border-gray-100 bg-white p-6 shadow-lg">
         
-        <div class="relative overflow-hidden rounded-xl mb-6 group">
+        <div class="group relative mb-6 aspect-[4/3] overflow-hidden rounded-xl bg-slate-50">
           @php
-              $detailImageUrl = ($program->image && str_starts_with($program->image, 'images/'))
-                  ? asset($program->image) 
-                  : ($program->image ? asset('storage/' . $program->image) : asset('sukarobot.com/source/img/logo_sukarobto_bogor'));
+              $detailImagePath = $program->image;
+              $detailImageExists = false;
+
+              if ($detailImagePath && str_starts_with($detailImagePath, 'images/')) {
+                  $detailImageExists = file_exists(public_path($detailImagePath));
+                  $detailImageUrl = asset($detailImagePath);
+              } elseif ($detailImagePath) {
+                  $detailImageExists = \Illuminate\Support\Facades\Storage::disk('public')->exists($detailImagePath);
+                  $detailImageUrl = asset('storage/' . $detailImagePath);
+              }
+
+              if (!$detailImageExists) {
+                  $detailImageUrl = asset('assets/elearning/client/img/logo_sukarobto_bogor.png');
+              }
           @endphp
           <img src="{{ $detailImageUrl }}" alt="Poster Kelas"
-            class="w-full object-cover transform group-hover:scale-105 transition duration-500">
+            class="h-full w-full {{ $detailImageExists ? 'object-cover' : 'object-contain p-8' }} transform transition duration-500 group-hover:scale-105">
         </div>
 
         @include('client.program.partials.purchase-cta-button', [

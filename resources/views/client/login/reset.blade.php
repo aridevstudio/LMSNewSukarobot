@@ -90,7 +90,7 @@
 
      
   <div id="step-3" class="hidden">
-    <h2 class="text-2xl font-bold text-gray-800 mb-2 text-center md:text-left">Reset Password ðŸ”’</h2>
+    <h2 class="text-2xl font-bold text-gray-800 mb-2 text-center md:text-left">Reset Password</h2>
     <p class="text-gray-600 mb-6 text-sm text-center md:text-left">Buat password baru untuk akun Anda.</p>
 
     <form id="form-step-3" class="space-y-4 relative">
@@ -124,7 +124,7 @@
         </button>
       </div>
 
-      <p id="password-error" class="hidden text-red-500 text-sm">âš ï¸ Password harus sama di kedua kolom.</p>
+      <p id="password-error" class="hidden text-red-500 text-sm">Password harus sama di kedua kolom.</p>
 
       <button type="submit"
               class="w-full py-2 bg-gradient-to-r from-orange-500 to-blue-600 text-white rounded-xl font-semibold shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg active:scale-95">

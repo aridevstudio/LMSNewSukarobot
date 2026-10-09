@@ -105,7 +105,7 @@
               <div class="flex flex-col">
                 <label class="text-[#111318] text-base font-medium leading-normal pb-2" for="currentPassword">Kata Sandi Saat Ini</label>
                 <div class="relative">
-                    <input name="current_password" class="form-input flex w-full min-w-0 resize-none overflow-hidden rounded-lg text-[#111318] focus:outline-0 focus:ring-2 focus:ring-primary/50 border {{ $errors->has('current_password') ? 'border-red-500' : 'border-[#dbdfe6]' }} bg-white focus:border-primary h-14 placeholder:text-[#616f89] p-[15px] text-base font-normal leading-normal pr-12" id="currentPassword" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" type="password"/>
+                    <input name="current_password" class="form-input flex w-full min-w-0 resize-none overflow-hidden rounded-lg text-[#111318] focus:outline-0 focus:ring-2 focus:ring-primary/50 border {{ $errors->has('current_password') ? 'border-red-500' : 'border-[#dbdfe6]' }} bg-white focus:border-primary h-14 placeholder:text-[#616f89] p-[15px] text-base font-normal leading-normal pr-12" id="currentPassword" type="password"/>
                     <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 cursor-pointer toggle-password" data-target="currentPassword">
                         <i class="fa-regular fa-eye"></i>
                     </button>
@@ -293,7 +293,7 @@
 
                 usernameTimeout = setTimeout(function() {
 
-                    usernameStatus.textContent = 'â³';
+                    usernameStatus.textContent = 'Memeriksa...';
                     usernameStatus.classList.remove('hidden');
 
                     fetch('{{ route("client.check-username") }}?username=' + encodeURIComponent(username), {
@@ -306,7 +306,7 @@
                     .then(data => {
                         if (data.available) {
 
-                            usernameStatus.textContent = 'âœ…';
+                            usernameStatus.textContent = '✓';
                             usernameStatus.classList.remove('hidden');
                             usernameMessage.textContent = 'Username tersedia';
                             usernameMessage.className = 'text-sm mt-1 text-green-600';
@@ -316,7 +316,7 @@
                             isUsernameValid = true;
                         } else {
 
-                            usernameStatus.textContent = 'âŒ';
+                            usernameStatus.textContent = '✕';
                             usernameStatus.classList.remove('hidden');
                             usernameMessage.textContent = 'Username sudah digunakan';
                             usernameMessage.className = 'text-sm mt-1 text-red-600';

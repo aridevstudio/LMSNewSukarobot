@@ -90,6 +90,7 @@ const eventSlideCount = document.querySelectorAll(".mySwiper .swiper-slide").len
 const eventSwiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   centeredSlides: true,
+  autoHeight: true,
   loop: eventSlideCount > 1,
   spaceBetween: 30,
 });

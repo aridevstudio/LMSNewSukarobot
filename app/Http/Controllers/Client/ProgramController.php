@@ -700,7 +700,7 @@ class ProgramController extends Controller
 
         // 3. Fallback to UI Avatars (name-based) or default
         if ($name) {
-            return 'https://ui-avatars.com/api/?name=' . urlencode($name) . '&background=random';
+            return 'https://ui-avatars.com/api/?name=' . urlencode($name) . '&background=2563eb&color=ffffff';
         }
 
         return $defaultAvatar;

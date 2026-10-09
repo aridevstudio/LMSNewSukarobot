@@ -17,47 +17,21 @@ function renderPage(page) {
         const card = document.createElement('div');
         card.className = 'h-full';
         card.innerHTML = `
-            <div class="cyber-card-wrapper">
-                <div class="cyber-card-layer-3"></div>
-                <div class="cyber-card-layer-2"></div>
-                <div class="cyber-card-front-border">
-                    <div class="cyber-card-content">
-                        <div class="flex items-center gap-3.5 sm:gap-4">
-                            <div class="cyber-avatar-frame">
-                                <div class="cyber-avatar-inner">
-                                    <svg viewBox="0 0 100 100" class="cyber-wireframe-globe" aria-hidden="true">
-                                        <circle cx="50" cy="50" r="46" fill="none" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="2 2" />
-                                        <ellipse cx="50" cy="50" rx="46" ry="16" fill="none" stroke="#0284c7" stroke-width="1" />
-                                        <ellipse cx="50" cy="50" rx="46" ry="32" fill="none" stroke="#0284c7" stroke-width="1" />
-                                        <ellipse cx="50" cy="50" rx="16" ry="46" fill="none" stroke="#0284c7" stroke-width="1" />
-                                        <ellipse cx="50" cy="50" rx="32" ry="46" fill="none" stroke="#0284c7" stroke-width="1" />
-                                        <line x1="4" y1="50" x2="96" y2="50" stroke="#0284c7" stroke-width="1" />
-                                        <line x1="50" y1="4" x2="50" y2="96" stroke="#0284c7" stroke-width="1" />
-                                    </svg>
-                                    <img src="${inst.foto}" alt="${inst.nama}" class="relative z-10">
-                                </div>
-                            </div>
-                            <div class="flex-grow min-w-0">
-                                <div class="flex items-center justify-between gap-1.5">
-                                    <h3 class="cyber-name truncate">${inst.nama}</h3>
-                                    <i class="fa-solid fa-robot text-sky-500 text-xs opacity-75 flex-shrink-0"></i>
-                                </div>
-                                <p class="cyber-role mt-0.5 truncate">${inst.jabatan}</p>
-                            </div>
-                        </div>
-                        <div class="cyber-bio-box">
-                            <p class="line-clamp-3 text-xs leading-relaxed">${inst.deskripsi}</p>
-                        </div>
-                        <div class="cyber-profile-footer">
-                            <span class="cyber-experience">
-                                <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-                                <span>${inst.pengalaman}</span>
-                            </span>
-                            <button type="button" class="cyber-profile-btn viewProfileBtn">Lihat Profil</button>
-                        </div>
+            <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
+                <div class="flex items-center gap-4">
+                    <img src="${inst.foto}" alt="${inst.nama}" class="h-20 w-20 shrink-0 rounded-2xl bg-blue-50 object-cover ring-4 ring-blue-50">
+                    <div class="min-w-0 flex-1">
+                        <span class="mb-1 inline-flex rounded-full bg-orange-50 px-2.5 py-1 text-[11px] font-bold text-orange-700">${inst.keahlian}</span>
+                        <h3 class="truncate text-lg font-bold text-gray-900">${inst.nama}</h3>
+                        <p class="truncate text-sm font-medium text-blue-600">${inst.jabatan}</p>
                     </div>
                 </div>
-            </div>`;
+                <p class="mt-5 line-clamp-3 min-h-[4.5rem] text-sm leading-relaxed text-gray-600">${inst.deskripsi}</p>
+                <div class="mt-5 flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
+                    <span class="inline-flex min-w-0 items-center gap-2 text-xs font-medium text-gray-500"><i class="fa-solid fa-briefcase text-blue-500"></i><span class="truncate">${inst.pengalaman}</span></span>
+                    <button type="button" class="viewProfileBtn inline-flex shrink-0 items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">Lihat Profil</button>
+                </div>
+            </article>`;
         grid.appendChild(card);
         card.querySelector('.viewProfileBtn').addEventListener('click', () => showModal(inst));
     });
@@ -78,45 +52,21 @@ function renderPagination() {
     }
 }
 
-const dropdownBtn = document.getElementById('dropdownBtn');
-const dropdownMenu = document.getElementById('dropdownMenu');
-const dropdownIcon = document.getElementById('dropdownIcon');
+const keahlianFilter = document.getElementById('keahlianFilter');
+const keahlianList = [...new Set(instructors.map(instructor => instructor.keahlian).filter(Boolean))]
+    .sort((first, second) => first.localeCompare(second, 'id'));
 
-new Set(instructors.map(i => i.keahlian)).forEach(k => {
-    const li = document.createElement('li');
-    li.className = 'px-4 py-2.5 hover:bg-blue-50 hover:text-blue-600 cursor-pointer transition-colors text-sm font-medium text-gray-600';
-    li.innerText = k;
-    li.dataset.value = k;
-    li.addEventListener('click', e => {
-        selectedKeahlian = e.target.dataset.value;
-        currentPage = 1;
-        renderPage(1);
-        dropdownBtn.querySelector('span').textContent = e.target.innerText;
-        dropdownMenu.classList.add('hidden');
-        dropdownIcon.classList.remove('rotate-180');
-    });
-    dropdownMenu.appendChild(li);
+keahlianList.forEach(keahlian => {
+    const option = document.createElement('option');
+    option.value = keahlian;
+    option.textContent = keahlian;
+    keahlianFilter.appendChild(option);
 });
 
-document.querySelector('[data-value="all"]').addEventListener('click', e => {
-    selectedKeahlian = 'all';
+keahlianFilter.addEventListener('change', event => {
+    selectedKeahlian = event.target.value;
     currentPage = 1;
-    renderPage(1);
-    dropdownBtn.querySelector('span').textContent = e.target.innerText;
-    dropdownMenu.classList.add('hidden');
-    dropdownIcon.classList.remove('rotate-180');
-});
-
-dropdownBtn.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('hidden');
-    dropdownIcon.classList.toggle('rotate-180');
-});
-
-document.addEventListener('click', e => {
-    if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
-        dropdownMenu.classList.add('hidden');
-        dropdownIcon.classList.remove('rotate-180');
-    }
+    renderPage(currentPage);
 });
 
 renderPage(1);
@@ -148,13 +98,16 @@ const modalBg = document.getElementById('modalBg');
 const modalBody = document.getElementById('modalBody');
 const modalImage = document.getElementById('modalImage');
 const modalClose = document.getElementById('modalClose');
+let previouslyFocusedElement = null;
 
 function showModal(inst) {
+    previouslyFocusedElement = document.activeElement;
     modalImage.src = inst.foto;
+    modalImage.alt = inst.nama;
     modalBody.innerHTML = `
         <div class="mb-4">
             <span class="inline-block bg-blue-50 text-blue-600 text-xs font-bold px-2.5 py-1 rounded-full mb-2 border border-blue-100">${inst.keahlian}</span>
-            <h2 class="text-2xl font-bold text-gray-900">${inst.nama}</h2>
+            <h2 id="modalInstructorName" class="text-2xl font-bold text-gray-900">${inst.nama}</h2>
             <p class="text-blue-600 font-medium">${inst.jabatan}</p>
         </div>
         <div class="flex items-center gap-2 text-sm text-gray-500 mb-4 bg-gray-50 p-3 rounded-xl">
@@ -162,9 +115,20 @@ function showModal(inst) {
             <span class="font-semibold">Pengalaman: ${inst.pengalaman}</span>
         </div>
         <p class="text-gray-700 leading-relaxed">${inst.deskripsi}</p>`;
+    modalBody.scrollTop = 0;
+    document.documentElement.classList.add('overflow-hidden');
     modalBg.classList.remove('hidden');
+    modalClose.focus();
 }
 
 modalClose.addEventListener('click', closeModal);
 modalBg.addEventListener('click', e => { if (e.target === modalBg) closeModal(); });
-function closeModal() { modalBg.classList.add('hidden'); }
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modalBg.classList.contains('hidden')) closeModal();
+});
+
+function closeModal() {
+    modalBg.classList.add('hidden');
+    document.documentElement.classList.remove('overflow-hidden');
+    previouslyFocusedElement?.focus();
+}

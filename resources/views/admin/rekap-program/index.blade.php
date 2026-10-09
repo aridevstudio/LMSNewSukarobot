@@ -59,7 +59,7 @@
                     @php
                         $programImageUrl = ($program->image && str_starts_with($program->image, 'images/'))
                             ? asset($program->image)
-                            : ($program->image ? asset('storage/' . $program->image) : 'https://picsum.photos/400/250?random=' . $program->id);
+                            : ($program->image ? asset('storage/' . $program->image) : asset('assets/elearning/client/img/logo_sukarobto_bogor.png'));
                     @endphp
                     <article class="rekap-card group bg-white dark:bg-gray-900 rounded-2xl border border-slate-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition overflow-hidden"
                         data-category="{{ $program->category_key }}"

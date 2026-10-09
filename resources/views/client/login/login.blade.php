@@ -27,7 +27,7 @@
 
       
       <div class="w-full md:w-1/2 p-8 flex flex-col justify-center relative">
-        <h2 class="text-3xl font-bold text-gray-800 mb-2 animate-fade">Selamat Datang ðŸ‘‹</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-2 animate-fade">Selamat Datang 👋</h2>
         <p class="text-gray-600 mb-6 animate-fade">Masuk untuk melanjutkan ke dashboard Anda.</p>
 
         
