@@ -99,7 +99,7 @@
     <div id="loading-screen" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-white">
         <div class="relative flex flex-col items-center justify-center space-y-6 px-6">
             <div class="flex justify-center">
-                <img src="{{ asset('assets/elearning/client/img/logo_sukarobto_bogor.png') }}" alt="Sukarobot"
+                <img src="{{ asset('assets/elearning/client/img/logo-sukarobot-academy.png') }}" alt="Sukarobot Academy"
                     class="h-12 md:h-14 w-auto">
             </div>
 

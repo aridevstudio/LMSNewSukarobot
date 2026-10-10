@@ -122,7 +122,7 @@
               }
 
               if (!$detailImageExists) {
-                  $detailImageUrl = asset('assets/elearning/client/img/logo_sukarobto_bogor.png');
+                  $detailImageUrl = asset('assets/elearning/client/img/logo-sukarobot-academy.png');
               }
           @endphp
           <img src="{{ $detailImageUrl }}" alt="Poster Kelas"

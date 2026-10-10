@@ -14,7 +14,7 @@
         
         <div class="flex h-16 min-h-16 shrink-0 items-center justify-center px-6 border-b border-slate-100 dark:border-gray-700">
             <a href="{{ route($role . '.dashboard') }}" class="flex items-center group">
-                <img src="{{ asset('assets/elearning/client/img/logo_sukarobto_bogor.png') }}"
+                <img src="{{ asset('assets/elearning/client/img/logo-sukarobot-academy.png') }}"
                     class="w-auto h-8 md:h-10 object-contain transition-all duration-300 ease-in-out hover:scale-105"
                     alt="Sukarobot Logo" />
             </a>

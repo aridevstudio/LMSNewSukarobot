@@ -74,14 +74,14 @@
                     class="relative z-10 bg-white p-4 rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
                     <picture>
                         <img src="{{ asset('assets/elearning/client/img/gedung-sukarobot-sukabumi.png') }}"
-                            alt="Gedung Sukarobot Cabang Sukabumi"
+                            alt="Gedung Sukarobot Academy"
                             fetchpriority="high"
                             loading="eager"
                             class="w-full rounded-2xl object-cover h-[400px] lg:h-[500px]">
                     </picture>
 
                     
-                    <div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm p-3.5 sm:p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3.5 z-20 animate-bounce"
+                    <div class="absolute -bottom-4 left-0 sm:-bottom-6 sm:-left-6 max-w-[calc(100%-0.5rem)] bg-white/95 backdrop-blur-sm p-3 sm:p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 z-20 animate-bounce"
                         style="animation-duration: 4s;">
                         <div class="w-12 h-12 bg-amber-50 border border-amber-200/80 rounded-xl flex items-center justify-center text-amber-500 shadow-sm">
                             <i class="fa-solid fa-award text-2xl"></i>
@@ -592,7 +592,7 @@
     <section id="event" class="pt-8 pb-16 lg:pt-10 lg:pb-20 mb-8 lg:mb-10 bg-white overflow-visible">
         <div class="text-center mb-8" data-aos="fade-up">
             <h2 class="text-3xl font-bold text-gray-900">Kompetisi Robotik</h2>
-            <p class="text-gray-600 mt-2">Tunjukkan bakatmu dan raih prestasi di tingkat nasional</p>
+            <p class="text-gray-600 mt-2">Tunjukkan bakatmu dan raih prestasi di tingkat nasional maupun internasional</p>
         </div>
 
         <div class="max-w-7xl mx-auto px-8 lg:px-12 relative">
@@ -654,6 +654,33 @@
                                 </a>
                             </div>
                         </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden group flex flex-col lg:flex-row">
+                            <div class="relative lg:w-1/2 h-80 lg:h-auto min-h-[420px] overflow-hidden bg-slate-950">
+                                <img src="{{ asset('assets/elearning/client/img/iarc-coming-soon.jpeg') }}"
+                                    alt="" aria-hidden="true"
+                                    class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-80 lg:hidden">
+                                <img src="{{ asset('assets/elearning/client/img/iarc-coming-soon.jpeg') }}"
+                                    alt="Poster IARC International Associations Robotic Competitions di Malaysia — Coming Soon"
+                                    loading="lazy"
+                                    class="relative z-10 w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500">
+                            </div>
+                            <div class="p-8 lg:w-1/2 flex flex-col justify-center">
+                                <h3 class="text-3xl font-bold text-gray-900 mb-2">IARC (International Associations Robotic Competitions)</h3>
+                                <p class="text-blue-600 font-semibold mb-6">🌏 Kompetisi Internasional · Malaysia</p>
+                                <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                                    IARC adalah ajang kompetisi robotik internasional yang akan segera hadir di Malaysia. Bersiaplah untuk menunjukkan kreativitas dan kemampuan robotik di panggung internasional. Informasi selanjutnya akan diumumkan segera.
+                                </p>
+                                <div class="flex items-center">
+                                    <span aria-label="Informasi kompetisi segera hadir"
+                                        class="inline-flex items-center px-8 py-3 bg-amber-100 text-amber-800 font-bold rounded-xl">
+                                        Coming Soon
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -766,7 +793,7 @@
                     Aktivitas & Keseruan Siswa
                 </h2>
                 <p class="text-gray-600 mt-3 max-w-2xl mx-auto text-base">
-                    Potret suasana belajar interaktif, eksplorasi teknologi robotika, dan momen seru di Sukarobot Cabang Sukabumi.
+                    Potret suasana belajar interaktif, eksplorasi teknologi robotika, dan momen seru di Sukarobot Academy.
                 </p>
             </div>
 
@@ -1054,7 +1081,7 @@
                 <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold mb-2.5 shadow-xs">
                     <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
                     <i class="fa-solid fa-location-dot text-xs"></i>
-                    <span>Lokasi Sukarobot Sukabumi</span>
+                    <span>Lokasi Sukarobot Academy</span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
                     Kunjungi Kantor & Tempat Belajar Kami
@@ -1087,7 +1114,7 @@
                                 </span>
                             </div>
                             <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
-                                Sukarobot Academy Cabang Sukabumi
+                                Sukarobot Academy
                             </h3>
                             <p class="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed">
                                 Ruang belajar interaktif untuk eksplorasi robotika, pemrograman anak & remaja, IoT, serta mengadakan berbagai perlombaan bergengsi.
@@ -1124,13 +1151,13 @@
 
                         
                         <div class="space-y-2 pt-1">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=-6.922729893076937,106.93068827499648"
+                            <a href="https://maps.app.goo.gl/NAhnet9atXagEh5Z8"
                                 target="_blank" rel="noopener noreferrer"
                                 class="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-sm hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5">
                                 <i class="fa-solid fa-diamond-turn-right text-xs sm:text-sm"></i>
                                 <span>Petunjuk Arah (Navigasi GPS)</span>
                             </a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=-6.922729893076937,106.93068827499648"
+                            <a href="https://maps.app.goo.gl/NAhnet9atXagEh5Z8"
                                 target="_blank" rel="noopener noreferrer"
                                 class="w-full flex items-center justify-center gap-1.5 py-2 px-4 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl text-xs border border-gray-200 shadow-xs transition-all hover:border-gray-300">
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-blue-600"></i>
@@ -1147,14 +1174,14 @@
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <p class="text-xs font-bold text-gray-900 leading-tight">Sukarobot Cabang Sukabumi</p>
+                                <p class="text-xs font-bold text-gray-900 leading-tight">Sukarobot Academy</p>
                                 <p class="text-[10px] text-gray-500">Cikole, Kota Sukabumi</p>
                             </div>
                         </div>
 
                         
                         <div class="absolute top-3 right-3 z-10">
-                            <a href="https://www.google.com/maps/search/?api=1&query=-6.597364105696696,106.76939929943386"
+                            <a href="https://maps.app.goo.gl/NAhnet9atXagEh5Z8"
                                 target="_blank" rel="noopener noreferrer"
                                 class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/95 hover:bg-white text-gray-700 hover:text-blue-600 rounded-lg shadow-xs text-[11px] font-semibold transition-all border border-gray-100"
                                 title="Buka peta penuh di tab baru">
@@ -1166,7 +1193,7 @@
                         
                         <iframe
                             id="gmap_canvas"
-                            title="Peta Lokasi Sukarobot Cabang Sukabumi"
+                            title="Peta Lokasi Sukarobot Academy"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.730965411687!2d106.93068827499648!3d-6.922729893076937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68378a889fa131%3A0x255807915403ab50!2sSUKAROBOT%20ACADEMY!5e0!3m2!1sid!2sid!4v1791447270153!5m2!1sid!2sid"
                             class="w-full h-full flex-1 min-h-[320px] sm:min-h-[360px] lg:min-h-[380px] border-0"
                             allowfullscreen=""
@@ -1180,7 +1207,7 @@
                                 <i class="fa-solid fa-circle-info text-blue-500 text-xs"></i>
                                 <span>Gunakan dua jari atau kontrol peta untuk navigasi</span>
                             </span>
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=-6.922729893076937,106.93068827499648"
+                            <a href="https://maps.app.goo.gl/NAhnet9atXagEh5Z8"
                                 target="_blank" rel="noopener noreferrer"
                                 class="text-blue-600 hover:text-blue-700 font-bold inline-flex items-center gap-1 text-[11px]">
                                 <span>Rute Langsung</span>
@@ -1232,13 +1259,13 @@
                     }
 
                     const adminPhone = '6285795899901';
-                    const text = `Halo Admin Sukarobot Cabang Sukabumi, saya ingin bertanya:\n\n*Nama:* ${name}\n*No. HP:* ${phone}\n*Pertanyaan:*\n${message}`;
+                    const text = `Halo Admin Sukarobot Academy, saya ingin bertanya:\n\n*Nama:* ${name}\n*No. HP:* ${phone}\n*Pertanyaan:*\n${message}`;
                     const waUrl = `https://wa.me/${adminPhone}?text=${encodeURIComponent(text)}`;
 
                     Swal.fire({
                         icon: 'success',
                         title: 'Membuka WhatsApp...',
-                        text: 'Pesan Anda telah disiapkan dan akan dialihkan ke WhatsApp Admin Sukarobot Cabang Sukabumi.',
+                        text: 'Pesan Anda telah disiapkan dan akan dialihkan ke WhatsApp Admin Sukarobot Academy.',
                         showConfirmButton: false,
                         timer: 1800
                     });

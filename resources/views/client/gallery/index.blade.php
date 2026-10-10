@@ -15,13 +15,13 @@
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold mb-2">
                     <i class="fa-solid fa-camera text-blue-500"></i>
-                    <span>Dokumentasi Sukarobot Sukabumi</span>
+                    <span>Dokumentasi Sukarobot Academy</span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
                     Galeri & Dokumentasi Kegiatan
                 </h1>
                 <p class="text-gray-600 mt-2 max-w-2xl text-xs sm:text-sm leading-relaxed">
-                    Koleksi lengkap foto aktivitas belajar robotika, pelatihan coding anak & remaja, kompetisi inovasi, serta fasilitas studio belajar Sukarobot Cabang Sukabumi.
+                    Koleksi lengkap foto aktivitas belajar robotika, pelatihan coding anak & remaja, kompetisi inovasi, serta fasilitas studio belajar Sukarobot Academy.
                 </p>
             </div>
 

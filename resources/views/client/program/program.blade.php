@@ -141,7 +141,7 @@
                 @php
                     $programImageUrl = ($program->image && str_starts_with($program->image, 'images/'))
                         ? asset($program->image) 
-                        : ($program->image ? asset('storage/' . $program->image) : asset('assets/elearning/client/img/logo_sukarobto_bogor.png'));
+                        : ($program->image ? asset('storage/' . $program->image) : asset('assets/elearning/client/img/logo-sukarobot-academy.png'));
                     $now = \Carbon\Carbon::now();
                     $startDate = \Carbon\Carbon::parse($program->start_date);
                     $endDate = \Carbon\Carbon::parse($program->end_date);

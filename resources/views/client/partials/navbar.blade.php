@@ -13,7 +13,7 @@
             
             <div class="flex items-center space-x-2">
                 <a href="{{ url('/') }}" class="flex items-center gap-2">
-                    <img src="{{ asset('assets/elearning/client/img/logo_sukarobto_bogor.png') }}" alt="Logo" class="w-44 sm:w-52 max-w-[200px] h-auto object-contain">
+                    <img src="{{ asset('assets/elearning/client/img/logo-sukarobot-academy.png') }}" alt="Sukarobot Academy" class="w-44 sm:w-52 max-w-[200px] h-auto object-contain">
                 </a>
             </div>
 
@@ -37,6 +37,7 @@
                         
                         <a href="https://brc.sukarobot.com/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black transition-colors">BRC</a>
                         <a href="{{ url('/') }}#event" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black transition-colors">SRC</a>
+                        <a href="{{ url('/') }}#event" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black transition-colors">IARC</a>
                     </div>
                 </div>
 
@@ -116,6 +117,7 @@
                     
                     <a href="https://brc.sukarobot.com/" target="_blank" rel="noopener noreferrer" class="block text-sm font-medium text-gray-600 hover:text-black py-1">BRC</a>
                     <a href="{{ url('/') }}#event" class="block text-sm font-medium text-gray-600 hover:text-black py-1">SRC</a>
+                    <a href="{{ url('/') }}#event" class="block text-sm font-medium text-gray-600 hover:text-black py-1">IARC</a>
                 </div>
             </div>
 

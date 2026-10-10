@@ -91,7 +91,7 @@
             </button>
 
             <a href="{{ route($role . '.dashboard') }}" class="flex min-w-0 items-center md:hidden" aria-label="Sukarobot Academy">
-                <img src="{{ asset('assets/elearning/client/img/logo_sukarobto_bogor.png') }}"
+                <img src="{{ asset('assets/elearning/client/img/logo-sukarobot-academy.png') }}"
                     alt="Sukarobot Academy"
                     class="h-10 w-auto max-w-[9rem] object-contain" />
             </a>

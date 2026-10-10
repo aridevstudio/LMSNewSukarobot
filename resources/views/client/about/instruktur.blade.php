@@ -40,7 +40,7 @@
             </svg>
         </button>
         <div class="w-full h-40 sm:h-52 shrink-0 bg-gray-50 flex items-center justify-center">
-            <img id="modalImage" class="w-full h-full object-contain" src="" alt="Instruktur">
+            <img id="modalImage" class="h-32 w-32 sm:h-40 sm:w-40 rounded-full object-cover ring-4 ring-white shadow-md" src="" alt="Instruktur">
         </div>
         <div id="modalBody" data-lenis-prevent class="min-h-0 flex-1 p-5 overflow-y-auto overscroll-contain"></div>
     </div>

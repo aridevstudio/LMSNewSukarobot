@@ -73,7 +73,7 @@
             }
         });
       </script>
-      <div class="relative group mb-6">
+      <div class="relative group mb-6 pr-12 lg:pr-0">
           
           <button id="scroll-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm shadow-md rounded-full p-1.5 text-gray-600 hover:text-blue-600 hidden md:hidden lg:hidden transition-opacity duration-300 opacity-0 pointer-events-none flex items-center justify-center" aria-label="Scroll Left">
               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -89,7 +89,7 @@
           </div>
 
           
-          <button id="scroll-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm shadow-md rounded-full p-1.5 text-gray-600 hover:text-blue-600 lg:hidden flex items-center justify-center" aria-label="Scroll Right">
+          <button id="scroll-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 bg-white/90 backdrop-blur-sm shadow-md rounded-full text-gray-600 hover:text-blue-600 lg:hidden flex items-center justify-center" aria-label="Scroll Right">
               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
           </button>
       </div>
